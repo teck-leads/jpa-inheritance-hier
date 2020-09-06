@@ -21,8 +21,11 @@ import lombok.NoArgsConstructor;
 @Table(name = "Employee")
 @Entity
 //{}=> approach -1
-@Inheritance(strategy = InheritanceType.SINGLE_TABLE) // everything is stored in one table
-@DiscriminatorColumn(name = "EMP_TYP")
+//@Inheritance(strategy = InheritanceType.SINGLE_TABLE) // everything is stored in one table
+//@DiscriminatorColumn(name = "EMP_TYP")
+
+//{}=> approach -2
+@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 @SequenceGenerator(name = "emp_seq", initialValue = 2001, allocationSize = 1)
 public abstract class Employee {
 
