@@ -25,7 +25,11 @@ import lombok.NoArgsConstructor;
 //@DiscriminatorColumn(name = "EMP_TYP")
 
 //{}=> approach -2
-@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
+//@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
+
+//{}=> approach -3
+@Inheritance(strategy = InheritanceType.JOINED)
+
 @SequenceGenerator(name = "emp_seq", initialValue = 2001, allocationSize = 1)
 public abstract class Employee {
 
