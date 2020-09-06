@@ -23,18 +23,24 @@ public class EmployeeRunner implements CommandLineRunner{
 	public void run(String... args) throws Exception {
 		
 		logger.info("saving employee");
+		Employee employee=new FullTimeEmployee("madhav", BigDecimal.valueOf(3000));
+		employeeRepository.insertEmployee(employee);
+		employee= new PartTimeEmployee("teja", BigDecimal.valueOf(5000));
+		employeeRepository.insertEmployee(employee);
+		/*
 		FullTimeEmployee fullTimeEmployee = new FullTimeEmployee("madhav", BigDecimal.valueOf(3000));
 		PartTimeEmployee partTimeEmployee = new PartTimeEmployee("teja", BigDecimal.valueOf(5000));
 		employeeRepository.insertFullTimeEmployee(fullTimeEmployee);
 		employeeRepository.insertPartTimeEmployee(partTimeEmployee);
+		*/
 		
 		logger.info("saved employee");
-		/*
-		logger.info("All employees{}=> "+employeeRepository.findAll());
-		*/
-		logger.info("All FullTimeEmployees{}=> "+employeeRepository.findAllFullTimeEmps());
 		
-		logger.info("All PartTimeEmployees{}=> "+employeeRepository.findAllPartTimeEmps());
+		logger.info("All employees{}=> "+employeeRepository.findAll());
+		
+		//logger.info("All FullTimeEmployees{}=> "+employeeRepository.findAllFullTimeEmps());
+		
+		//logger.info("All PartTimeEmployees{}=> "+employeeRepository.findAllPartTimeEmps());
 		
 	}
 

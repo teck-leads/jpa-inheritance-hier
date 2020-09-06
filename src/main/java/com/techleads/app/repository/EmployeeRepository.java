@@ -22,15 +22,15 @@ public class EmployeeRepository {
 	private EntityManager entityManager;
 	private Logger logger = LoggerFactory.getLogger(this.getClass());
 
-	/*
+	
 	public void insertEmployee(Employee employee) {
 		logger.info("inside " + this.getClass());
 		entityManager.persist(employee);
 		logger.info("existing from " + this.getClass());
 	}
-	*/
+	
 
-	/*
+	
 	public List<Employee> findAll() {
 		logger.info("inside " + this.getClass());
 		TypedQuery<Employee> createQuery = entityManager.createQuery("select e from Employee e", Employee.class);
@@ -39,7 +39,7 @@ public class EmployeeRepository {
 		logger.info("existing from " + this.getClass());
 		return employees;
 	}
-	*/
+	
 	
 	public void insertFullTimeEmployee(FullTimeEmployee employee) {
 		logger.info("inside " + this.getClass());
